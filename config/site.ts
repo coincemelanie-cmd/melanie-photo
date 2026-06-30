@@ -1,0 +1,38 @@
+export const siteConfig = {
+  name: "Mélanie Photography",
+  tagline: "Photographe Mariage, Grossesse et Famille",
+  description:
+    "Mélanie, photographe à La Palme (Aude), capture avec sensibilité et authenticité vos moments précieux : mariage, grossesse et famille. Intervention sur Perpignan, Narbonne et toute la région.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://melanie-photo.fr",
+  author: {
+    name: "Mélanie Photography",
+    title: "Photographe — conteuse visuelle",
+    email: process.env.CONTACT_EMAIL ?? "contact@melanie-photo.fr",
+    phone: "06 13 57 67 08",
+    address: "30 rue des Tamarins, 11480 La Palme",
+    siret: "839 489 036 00013",
+    location: "La Palme, Aude — intervention Perpignan / Narbonne",
+  },
+  social: {
+    facebook: "https://www.facebook.com/melaniephotography661134",
+    instagram: "https://www.instagram.com/melaniephotography661134",
+    whatsapp: "https://wa.me/33613576708",
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Mélanie Photography",
+  },
+  keywords: [
+    "photographe mariage Perpignan",
+    "photographe mariage Narbonne",
+    "photographe grossesse Aude",
+    "photographe famille Perpignan",
+    "photographe La Palme",
+    "photo-reportage mariage",
+    "séance grossesse Narbonne",
+    "séance photo famille",
+    "photographe Pyrénées-Orientales",
+    "photographe Occitanie",
+  ],
+};
