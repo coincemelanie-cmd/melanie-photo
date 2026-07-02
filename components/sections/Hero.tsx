@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ArrowRight, Heart } from "lucide-react";
-import Image from "next/image";
 
 export function Hero() {
   return (
@@ -8,16 +8,15 @@ export function Hero() {
       className="relative flex min-h-[90vh] items-end overflow-hidden pb-16 pt-32 sm:pb-24"
       aria-labelledby="hero-heading"
     >
-      {/* Image de fond plein écran */}
+      {/*
+        Image de fond plein écran : placeholder en attendant une photo en
+        haute résolution (2000px+ de large). Les photos récupérées de
+        l'ancien site (max 768px de large) pixellisent trop une fois
+        étirées sur toute la largeur de l'écran — elles restent nettes
+        utilisées en plus petit (cartes portfolio/prestations).
+      */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/portfolio/mariage/07-couple.jpg"
-          alt="Photo de couple de mariés"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        <ImagePlaceholder label="Photo de couverture à venir" className="h-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/40 to-neutral-950/10" />
       </div>
 
