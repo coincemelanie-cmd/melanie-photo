@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTA } from "@/components/sections/CTA";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { CoverImage } from "@/components/ui/CoverImage";
 import { services } from "@/config/services";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -59,7 +59,11 @@ export default function PrestationsPage() {
                   className="group flex flex-col h-full overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-200 hover:shadow-large hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
                 >
                   <div className="aspect-[4/3] overflow-hidden">
-                    <ImagePlaceholder label={service.shortTitle} />
+                    <CoverImage
+                      src={service.image}
+                      alt={service.imageAlt}
+                      label={service.shortTitle}
+                    />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h2 className="font-serif text-xl font-semibold text-neutral-900 group-hover:text-brand-600 transition-colors">

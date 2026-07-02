@@ -12,6 +12,9 @@ export interface Service {
   shortTitle: string;
   description: string;
   hero: string;
+  /** Photo de couverture réelle. Si absente, un placeholder stylisé est affiché. */
+  image?: string;
+  imageAlt?: string;
   /** Ce qui rend chaque séance unique, l'approche artistique */
   highlights: string[];
   /** Ce qui est inclus dans la prestation */

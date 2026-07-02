@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Accordion } from "@/components/ui/Accordion";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { CoverImage } from "@/components/ui/CoverImage";
 import { Button } from "@/components/ui/Button";
 import { CTA } from "@/components/sections/CTA";
 import { services, getServiceBySlug } from "@/config/services";
@@ -70,7 +70,12 @@ export default function ServicePage({ params }: Props) {
           {/* Hero */}
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 mb-16">
             <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-              <ImagePlaceholder label={service.shortTitle} />
+              <CoverImage
+                src={service.image}
+                alt={service.imageAlt}
+                label={service.shortTitle}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
             </div>
             <div className="flex flex-col justify-center">
               <h1 className="font-serif text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">

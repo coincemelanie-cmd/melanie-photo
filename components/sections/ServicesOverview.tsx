@@ -1,7 +1,7 @@
 import { services } from "@/config/services";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { CoverImage } from "@/components/ui/CoverImage";
 
 export function ServicesOverview() {
   return (
@@ -31,7 +31,9 @@ export function ServicesOverview() {
                 className="group block overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-200 hover:shadow-large hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
               >
                 <div className="aspect-[4/5] overflow-hidden">
-                  <ImagePlaceholder
+                  <CoverImage
+                    src={service.image}
+                    alt={service.imageAlt}
                     label={service.shortTitle}
                     className="transition-transform duration-300 group-hover:scale-105"
                   />

@@ -9,6 +9,8 @@ export const services: Service[] = [
     description:
       "Un photo-reportage de mariage sensible et authentique, qui raconte votre journée telle qu'elle a vraiment été vécue — sans mise en scène forcée.",
     hero: "Raconter votre histoire, un instant à la fois.",
+    image: "/images/portfolio/mariage/07-couple.jpg",
+    imageAlt: "Photo de couple de mariés",
     highlights: [
       "Une approche photojournalistique : je capture les instants tels qu'ils arrivent, sans les figer",
       "Une présence discrète qui laisse vivre l'émotion plutôt que de la diriger",
@@ -91,6 +93,8 @@ export const services: Service[] = [
     description:
       "Une séance maternité douce et intime pour immortaliser cette période unique, entre attente et émerveillement.",
     hero: "Sublimer ce moment suspendu avant l'arrivée de bébé.",
+    image: "/images/portfolio/grossesse/01-grossesse.jpg",
+    imageAlt: "Séance photo grossesse en studio",
     highlights: [
       "Une ambiance bienveillante pour vous sentir à l'aise devant l'objectif",
       "Un style naturel et lumineux, loin des poses figées",
