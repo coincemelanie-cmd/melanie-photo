@@ -8,23 +8,16 @@ export function Hero() {
       className="relative flex min-h-[90vh] items-end overflow-hidden pb-16 pt-32 sm:pb-24"
       aria-labelledby="hero-heading"
     >
-      {/*
-        Image de fond plein écran : la meilleure photo disponible dans les
-        archives de l'ancien site ne dépasse pas 536px de large — un léger
-        flou artistique (effet bokeh) masque la perte de netteté à l'étirement
-        plein écran. À remplacer par une vraie photo haute résolution (2000px+)
-        dès que disponible.
-      */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/portfolio/mariage/portrait-mariee-petales-fleurs.jpg"
-          alt="Portrait de mariée souriante sous une pluie de pétales de fleurs"
+          src="/images/hero-photographe-famille-plage.jpg"
+          alt="Famille réunie et complice sur une plage au coucher du jour"
           fill
           priority
-          className="scale-110 object-cover blur-sm"
+          className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/45 to-neutral-950/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/40 to-neutral-950/10" />
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

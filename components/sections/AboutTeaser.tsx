@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function AboutTeaser() {
   return (
@@ -10,8 +10,14 @@ export function AboutTeaser() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div className="aspect-[4/5] overflow-hidden rounded-2xl">
-            <ImagePlaceholder label="Portrait de Mélanie à venir" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+            <Image
+              src="/images/melanie-photographe-portrait.jpg"
+              alt="Mélanie, photographe, appareil photo à l'épaule"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-brand-600 mb-3">

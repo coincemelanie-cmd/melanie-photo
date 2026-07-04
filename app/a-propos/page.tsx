@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { CTA } from "@/components/sections/CTA";
 import { siteConfig } from "@/config/site";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -19,8 +19,15 @@ export default function AProposPage() {
           <Breadcrumb items={[{ label: "À propos" }]} className="mb-8" />
 
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-            <div className="aspect-[4/5] overflow-hidden rounded-2xl lg:sticky lg:top-28">
-              <ImagePlaceholder label="Portrait de Mélanie à venir" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl lg:sticky lg:top-28">
+              <Image
+                src="/images/melanie-photographe-portrait.jpg"
+                alt="Mélanie, photographe, appareil photo à l'épaule"
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+              />
             </div>
 
             <div>
@@ -53,7 +60,7 @@ export default function AProposPage() {
                 </p>
                 <p>
                   Si vous cherchez une photographe sensible, à l'écoute et
-                  passionnée par l'authenticité, j'serais ravie d'échanger
+                  passionnée par l'authenticité, je serais ravie d'échanger
                   avec vous sur votre projet.
                 </p>
               </div>

@@ -1,12 +1,12 @@
 import type { GalleryImage } from "@/types/gallery";
 
 /**
- * Galerie portfolio. Photos triées et renommées depuis la médiathèque complète
- * de l'ancien site (fichiers watermarqués "Mélanie Photography" — donc bien
- * son travail). Les visuels de démo du thème WordPress, les images générées
- * par IA et les visuels marketing d'imprimantes trouvés dans le dossier
- * source ont été écartés. La catégorie famille reste en placeholder faute de
- * vraie photo disponible.
+ * Galerie portfolio. Photos triées depuis la médiathèque complète de
+ * l'ancien site (fichiers watermarqués "Mélanie Photography" — donc bien
+ * son travail), en gardant les versions en plus haute résolution disponibles
+ * et en recadrant celles dont le filigrane restait visible. Les visuels de
+ * démo du thème WordPress, les images générées par IA et les visuels
+ * marketing d'imprimantes trouvés dans le dossier source ont été écartés.
  * Pour ajouter une photo : déposer le fichier dans
  * public/images/portfolio/{categorie}/ (nom de fichier descriptif en
  * minuscules avec tirets, sans accents) puis ajouter une entrée ici.
@@ -44,8 +44,8 @@ export const galleryImages: GalleryImage[] = [
     category: "mariage",
   },
   {
-    src: "/images/portfolio/mariage/photographe-mariage-portrait-couple-rire.jpg",
-    alt: "Photographe mariage : portrait des mariés éclatant de rire",
+    src: "/images/portfolio/mariage/photographe-mariage-portrait-couple-arbre.jpg",
+    alt: "Photographe mariage : portrait des mariés adossés à un arbre",
     category: "mariage",
   },
   {
@@ -119,17 +119,15 @@ export const galleryImages: GalleryImage[] = [
     alt: "Photographe grossesse : étude en noir et blanc du ventre arrondi",
     category: "grossesse",
   },
-  // Famille — pas encore de vraie photo disponible, en attente de nouvelles séances
+  // Famille
   {
-    src: "/images/portfolio/famille/01.jpg",
-    alt: "Photo de famille à venir",
+    src: "/images/portfolio/famille/photographe-famille-fratrie-plage.jpg",
+    alt: "Photographe famille : fratrie réunie sur la plage",
     category: "famille",
-    placeholder: true,
   },
   {
-    src: "/images/portfolio/famille/02.jpg",
-    alt: "Photo de famille à venir",
+    src: "/images/portfolio/famille/photographe-famille-complicite-maman-enfants.jpg",
+    alt: "Photographe famille : complicité entre une maman et ses enfants au bord de l'eau",
     category: "famille",
-    placeholder: true,
   },
 ];
