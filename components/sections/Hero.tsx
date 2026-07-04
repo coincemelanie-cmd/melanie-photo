@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ArrowRight, Heart } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -9,15 +9,22 @@ export function Hero() {
       aria-labelledby="hero-heading"
     >
       {/*
-        Image de fond plein écran : placeholder en attendant une photo en
-        haute résolution (2000px+ de large). Les photos récupérées de
-        l'ancien site (max 768px de large) pixellisent trop une fois
-        étirées sur toute la largeur de l'écran — elles restent nettes
-        utilisées en plus petit (cartes portfolio/prestations).
+        Image de fond plein écran : la meilleure photo disponible dans les
+        archives de l'ancien site ne dépasse pas 536px de large — un léger
+        flou artistique (effet bokeh) masque la perte de netteté à l'étirement
+        plein écran. À remplacer par une vraie photo haute résolution (2000px+)
+        dès que disponible.
       */}
       <div className="absolute inset-0 -z-10">
-        <ImagePlaceholder label="Photo de couverture à venir" className="h-full" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/40 to-neutral-950/10" />
+        <Image
+          src="/images/portfolio/mariage/portrait-mariee-petales-fleurs.jpg"
+          alt="Portrait de mariée souriante sous une pluie de pétales de fleurs"
+          fill
+          priority
+          className="scale-110 object-cover blur-sm"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/45 to-neutral-950/15" />
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
