@@ -11,6 +11,7 @@ import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { Clock, User, Calendar } from "lucide-react";
+import Image from "next/image";
 
 interface Props {
   params: { slug: string };
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
+      images: post.image ? [{ url: post.image }] : undefined,
     },
   };
 }
@@ -107,6 +109,20 @@ export default function BlogPostPage({ params }: Props) {
               </span>
             </div>
           </header>
+
+          {/* Image de couverture */}
+          {post.image && (
+            <div className="relative mb-10 aspect-[1200/630] w-full overflow-hidden rounded-2xl">
+              <Image
+                src={post.image}
+                alt={post.imageAlt ?? post.title}
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 1024px) 768px, 100vw"
+              />
+            </div>
+          )}
 
           {/* Content */}
           <article className="prose-blog">

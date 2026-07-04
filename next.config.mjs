@@ -4,6 +4,8 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "inline",
   },
   headers: async () => [
     {
