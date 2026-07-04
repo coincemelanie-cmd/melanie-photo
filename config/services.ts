@@ -9,8 +9,8 @@ export const services: Service[] = [
     description:
       "Un photo-reportage de mariage sensible et authentique, qui raconte votre journée telle qu'elle a vraiment été vécue — sans mise en scène forcée.",
     hero: "Raconter votre histoire, un instant à la fois.",
-    image: "/images/portfolio/mariage/photographe-mariage-portrait-couple-rire.jpg",
-    imageAlt: "Photographe mariage : portrait des mariés éclatant de rire",
+    image: "/images/portfolio/mariage/photographe-mariage-portrait-couple-arbre.jpg",
+    imageAlt: "Photographe mariage : portrait des mariés adossés à un arbre",
     highlights: [
       "Une approche photojournalistique : je capture les instants tels qu'ils arrivent, sans les figer",
       "Une présence discrète qui laisse vivre l'émotion plutôt que de la diriger",
@@ -165,6 +165,83 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "naissance",
+    category: "naissance",
+    title: "Photographe Naissance",
+    shortTitle: "Naissance",
+    description:
+      "Une séance nouveau-né tout en douceur pour immortaliser les tout premiers jours de bébé, à votre domicile ou en studio.",
+    hero: "Fixer la douceur des tout premiers instants.",
+    highlights: [
+      "Une séance calme et sans précipitation, au rythme du bébé",
+      "Une approche naturelle : peu de mise en scène, beaucoup de tendresse",
+      "Des photos qui incluent aussi les parents, les frères et sœurs",
+      "Un cadre rassurant, chez vous ou en studio, adapté aux tout-petits",
+    ],
+    includes: [
+      "Échange préalable pour choisir la date et le lieu de la séance",
+      "Séance d'environ 1h30, avec des pauses selon les besoins de bébé",
+      "Sélection et retouche des plus belles photos",
+      "Galerie privée en ligne pour télécharger vos souvenirs",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Prise de contact",
+        description:
+          "Idéalement pendant la grossesse, pour réserver une date approximative dans les 15 premiers jours de bébé.",
+      },
+      {
+        step: 2,
+        title: "Confirmation",
+        description:
+          "La date exacte est confirmée à la naissance, en fonction de l'arrivée de bébé.",
+      },
+      {
+        step: 3,
+        title: "La séance",
+        description:
+          "Un moment calme à votre domicile ou en studio, sans jamais forcer bébé à poser.",
+      },
+      {
+        step: 4,
+        title: "Livraison",
+        description:
+          "Sélection et retouche des photos, livrées sous 2 à 3 semaines dans une galerie privée.",
+      },
+    ],
+    pricing: [
+      {
+        label: "Séance Naissance",
+        price: "Sur devis",
+        description:
+          "Une formule pensée pour le rythme de bébé, environ 1h30 à votre domicile ou en studio.",
+        features: [
+          "Séance d'environ 1h30",
+          "À domicile ou en studio",
+          "Galerie privée en ligne incluse",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Quel est le meilleur moment pour la séance naissance ?",
+        answer:
+          "Idéalement dans les 15 premiers jours de vie de bébé, période où il dort le plus profondément et se laisse le plus facilement manipuler en douceur.",
+      },
+      {
+        question: "La séance peut-elle avoir lieu à la maternité ?",
+        answer:
+          "C'est possible selon les maternités, mais je recommande plutôt votre domicile ou un studio, plus calmes et mieux adaptés à une séance sans contrainte de temps.",
+      },
+    ],
+    keywords: [
+      "photographe naissance Perpignan",
+      "photographe nouveau-né Narbonne",
+      "séance nouveau-né Aude",
+    ],
+  },
+  {
     slug: "famille",
     category: "famille",
     title: "Photographe Famille",
@@ -172,6 +249,8 @@ export const services: Service[] = [
     description:
       "Des séances photo en famille pour capturer la complicité et la spontanéité de votre quotidien, à Perpignan et dans toute la région.",
     hero: "Garder une trace vivante de vos liens, tels qu'ils sont aujourd'hui.",
+    image: "/images/portfolio/famille/photographe-famille-fratrie-plage.jpg",
+    imageAlt: "Photographe famille : fratrie réunie sur la plage",
     highlights: [
       "Une séance pensée pour le naturel : on joue, on rit, on capture la vraie complicité",
       "Un cadre adapté aux enfants, sans contrainte de pose interminable",

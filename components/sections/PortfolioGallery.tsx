@@ -13,6 +13,7 @@ const categories: { value: GalleryCategory | "tous"; label: string }[] = [
   { value: "tous", label: "Tous" },
   { value: "mariage", label: "Mariage" },
   { value: "grossesse", label: "Grossesse" },
+  { value: "naissance", label: "Naissance" },
   { value: "famille", label: "Famille" },
 ];
 

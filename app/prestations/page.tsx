@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Prestations",
   description:
-    "Découvrez les prestations de Mélanie Photography : photo de mariage, séance grossesse et séance famille à Perpignan, Narbonne et dans l'Aude.",
+    "Découvrez les prestations de Mélanie Photography : photo de mariage, séance grossesse, séance naissance et séance famille à Perpignan, Narbonne et dans l'Aude.",
   alternates: { canonical: "/prestations" },
 };
 
@@ -49,7 +49,7 @@ export default function PrestationsPage() {
           </div>
 
           <ul
-            className="grid grid-cols-1 gap-6 sm:grid-cols-3"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
             role="list"
           >
             {services.map((service) => (

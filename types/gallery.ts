@@ -1,4 +1,4 @@
-export type GalleryCategory = "mariage" | "grossesse" | "famille";
+export type GalleryCategory = "mariage" | "grossesse" | "naissance" | "famille";
 
 export interface GalleryImage {
   src: string;

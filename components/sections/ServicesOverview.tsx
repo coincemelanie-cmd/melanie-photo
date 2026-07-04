@@ -12,7 +12,7 @@ export function ServicesOverview() {
             id="services-heading"
             className="font-serif text-3xl font-semibold text-neutral-950 sm:text-4xl"
           >
-            Trois moments de vie, une même sensibilité
+            Des moments de vie, une même sensibilité
           </h2>
           <p className="mt-4 text-neutral-600 leading-relaxed">
             Chaque séance est pensée pour vous ressembler — sans poses
@@ -21,7 +21,7 @@ export function ServicesOverview() {
         </div>
 
         <ul
-          className="grid grid-cols-1 gap-6 sm:grid-cols-3"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
           role="list"
         >
           {services.map((service) => (

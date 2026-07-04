@@ -7,7 +7,7 @@ import { galleryImages } from "@/config/gallery";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Découvrez le portfolio de Mélanie Photography : photos de mariage, séances grossesse et famille réalisées à Perpignan, Narbonne et dans l'Aude.",
+    "Découvrez le portfolio de Mélanie Photography : photos de mariage, séances grossesse, naissance et famille réalisées à Perpignan, Narbonne et dans l'Aude.",
   alternates: { canonical: "/portfolio" },
 };
 
@@ -24,9 +24,9 @@ export default function PortfolioPage() {
             </h1>
             <p className="mt-4 text-neutral-600 leading-relaxed">
               Un aperçu des moments capturés lors de mariages, séances
-              grossesse et séances famille. Le portfolio se complète au fil
-              des séances — revenez régulièrement pour découvrir les
-              nouveautés.
+              grossesse, naissance et séances famille. Le portfolio se
+              complète au fil des séances, revenez régulièrement pour
+              découvrir les nouveautés.
             </p>
           </div>
 

@@ -10,7 +10,7 @@ const schema = z.object({
     .min(10)
     .max(20)
     .regex(/^[0-9+\s\-().]+$/),
-  prestation: z.enum(["mariage", "grossesse", "famille", "autre"]),
+  prestation: z.enum(["mariage", "grossesse", "naissance", "famille", "autre"]),
   dateSouhaitee: z.string().max(20).optional(),
   message: z.string().min(10).max(2000),
   honeypot: z.string().max(0),
@@ -19,6 +19,7 @@ const schema = z.object({
 const prestationLabel: Record<string, string> = {
   mariage: "Mariage",
   grossesse: "Grossesse",
+  naissance: "Naissance",
   famille: "Famille",
   autre: "Autre",
 };
@@ -116,7 +117,7 @@ export async function POST(req: NextRequest) {
 
           <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
           <p style="font-size: 12px; color: #9ca3af;">
-            melanie-photo.fr — Photographe Mariage, Grossesse et Famille
+            melanie-photo.fr — Photographe Mariage, Grossesse, Naissance et Famille
           </p>
         </div>
       `,

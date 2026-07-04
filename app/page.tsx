@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { AboutTeaser } from "@/components/sections/AboutTeaser";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { CTA } from "@/components/sections/CTA";
 import { siteConfig } from "@/config/site";
 
@@ -26,7 +25,7 @@ const jsonLd = {
     addressCountry: "FR",
   },
   areaServed: ["Perpignan", "Narbonne", "Aude", "Pyrénées-Orientales"],
-  serviceType: "Photographe Mariage, Grossesse et Famille",
+  serviceType: "Photographe Mariage, Grossesse, Naissance et Famille",
   priceRange: "Sur devis",
   sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
 };
@@ -41,7 +40,7 @@ export default function HomePage() {
       <Hero />
       <ServicesOverview />
       <AboutTeaser />
-      <Testimonials />
+      {/* Section "Ce qu'ils en disent" masquée en attendant de vrais témoignages clients */}
       <CTA />
     </>
   );

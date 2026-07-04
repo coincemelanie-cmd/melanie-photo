@@ -119,6 +119,19 @@ export const galleryImages: GalleryImage[] = [
     alt: "Photographe grossesse : étude en noir et blanc du ventre arrondi",
     category: "grossesse",
   },
+  // Naissance — pas encore de vraie photo disponible, en attente de nouvelles séances
+  {
+    src: "/images/portfolio/naissance/01.jpg",
+    alt: "Photo de naissance à venir",
+    category: "naissance",
+    placeholder: true,
+  },
+  {
+    src: "/images/portfolio/naissance/02.jpg",
+    alt: "Photo de naissance à venir",
+    category: "naissance",
+    placeholder: true,
+  },
   // Famille
   {
     src: "/images/portfolio/famille/photographe-famille-fratrie-plage.jpg",

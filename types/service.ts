@@ -7,7 +7,7 @@ export interface PricingFormula {
 
 export interface Service {
   slug: string;
-  category: "mariage" | "grossesse" | "famille";
+  category: "mariage" | "grossesse" | "naissance" | "famille";
   title: string;
   shortTitle: string;
   description: string;

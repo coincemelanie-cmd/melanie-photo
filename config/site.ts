@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Mélanie Photography",
-  tagline: "Photographe Mariage, Grossesse et Famille",
+  tagline: "Photographe Mariage, Grossesse, Naissance et Famille",
   description:
-    "Mélanie, photographe à La Palme (Aude), capture avec sensibilité et authenticité vos moments précieux : mariage, grossesse et famille. Intervention sur Perpignan, Narbonne et toute la région.",
+    "Mélanie, photographe à La Palme (Aude), capture avec sensibilité et authenticité vos moments précieux : mariage, grossesse, naissance et famille. Intervention sur Perpignan, Narbonne et toute la région.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://melanie-photo.fr",
   author: {
     name: "Mélanie Photography",
@@ -27,6 +27,8 @@ export const siteConfig = {
     "photographe mariage Perpignan",
     "photographe mariage Narbonne",
     "photographe grossesse Aude",
+    "photographe naissance Perpignan",
+    "photographe nouveau-né Narbonne",
     "photographe famille Perpignan",
     "photographe La Palme",
     "photo-reportage mariage",

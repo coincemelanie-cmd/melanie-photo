@@ -152,6 +152,7 @@ export function ContactForm() {
               <option value="">Sélectionnez...</option>
               <option value="mariage">Mariage</option>
               <option value="grossesse">Grossesse</option>
+              <option value="naissance">Naissance</option>
               <option value="famille">Famille</option>
               <option value="autre">Autre</option>
             </select>

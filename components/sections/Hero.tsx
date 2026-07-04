@@ -24,7 +24,7 @@ export function Hero() {
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-sm mb-6">
             <Heart className="h-3 w-3 text-brand-300" aria-hidden="true" />
-            Photographe Mariage, Grossesse et Famille
+            Photographe Mariage, Grossesse, Naissance et Famille
           </div>
 
           <h1
@@ -37,7 +37,7 @@ export function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85">
             Mélanie, photographe à La Palme, raconte avec sensibilité et
             authenticité les instants précieux de votre mariage, votre
-            grossesse ou votre vie de famille.
+            grossesse, l'arrivée de bébé ou votre vie de famille.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
