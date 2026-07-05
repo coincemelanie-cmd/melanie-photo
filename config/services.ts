@@ -172,6 +172,8 @@ export const services: Service[] = [
     description:
       "Une séance nouveau-né tout en douceur pour immortaliser les tout premiers jours de bébé, à votre domicile ou en studio.",
     hero: "Fixer la douceur des tout premiers instants.",
+    image: "/images/portfolio/naissance/photographe-naissance-nouveau-ne-portrait.jpg",
+    imageAlt: "Portrait d'un nouveau-né endormi",
     highlights: [
       "Une séance calme et sans précipitation, au rythme du bébé",
       "Une approche naturelle : peu de mise en scène, beaucoup de tendresse",

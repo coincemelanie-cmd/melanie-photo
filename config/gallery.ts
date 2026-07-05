@@ -103,6 +103,36 @@ export const galleryImages: GalleryImage[] = [
     alt: "Réception de mariage dans le jardin du Clos des Lys",
     category: "mariage",
   },
+  {
+    src: "/images/portfolio/mariage/photographe-mariage-sortie-eglise-confettis.jpg",
+    alt: "Sortie d'église des mariés sous les confettis",
+    category: "mariage",
+  },
+  {
+    src: "/images/portfolio/mariage/mariage-cocktail-reception-detail.jpg",
+    alt: "Détail du buffet cocktail lors d'une réception de mariage",
+    category: "mariage",
+  },
+  {
+    src: "/images/portfolio/mariage/photographe-mariage-couple-vigne-noeud-papillon.jpg",
+    alt: "Portrait des mariés riant au milieu des vignes",
+    category: "mariage",
+  },
+  {
+    src: "/images/portfolio/mariage/photographe-mariage-portrait-ponton-noir-blanc.jpg",
+    alt: "Portrait des mariés sur un ponton en noir et blanc",
+    category: "mariage",
+  },
+  {
+    src: "/images/portfolio/mariage/mariage-ceremonie-sable-rituel.jpg",
+    alt: "Rituel du sable lors d'une cérémonie de mariage",
+    category: "mariage",
+  },
+  {
+    src: "/images/portfolio/mariage/mariage-mariee-rubans-ceremonie.jpg",
+    alt: "Mariée coupant les rubans lors d'une cérémonie de mariage",
+    category: "mariage",
+  },
   // Grossesse
   {
     src: "/images/portfolio/grossesse/photographe-grossesse-studio-denim.jpg",
@@ -119,18 +149,11 @@ export const galleryImages: GalleryImage[] = [
     alt: "Photographe grossesse : étude en noir et blanc du ventre arrondi",
     category: "grossesse",
   },
-  // Naissance — pas encore de vraie photo disponible, en attente de nouvelles séances
+  // Naissance
   {
-    src: "/images/portfolio/naissance/01.jpg",
-    alt: "Photo de naissance à venir",
+    src: "/images/portfolio/naissance/photographe-naissance-nouveau-ne-portrait.jpg",
+    alt: "Portrait d'un nouveau-né endormi",
     category: "naissance",
-    placeholder: true,
-  },
-  {
-    src: "/images/portfolio/naissance/02.jpg",
-    alt: "Photo de naissance à venir",
-    category: "naissance",
-    placeholder: true,
   },
   // Famille
   {
@@ -141,6 +164,16 @@ export const galleryImages: GalleryImage[] = [
   {
     src: "/images/portfolio/famille/photographe-famille-complicite-maman-enfants.jpg",
     alt: "Photographe famille : complicité entre une maman et ses enfants au bord de l'eau",
+    category: "famille",
+  },
+  {
+    src: "/images/portfolio/famille/photographe-famille-groupe-dos-plage.jpg",
+    alt: "Famille de dos assise sur un tronc d'arbre à la plage",
+    category: "famille",
+  },
+  {
+    src: "/images/portfolio/famille/photographe-famille-couple-tronc-plage.jpg",
+    alt: "Couple complice assis sur un tronc d'arbre à la plage",
     category: "famille",
   },
 ];

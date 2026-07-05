@@ -10,8 +10,8 @@ export function Hero() {
     >
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero-photographe-famille-plage.jpg"
-          alt="Famille réunie et complice sur une plage au coucher du jour"
+          src="/images/hero-photographe-mariage-sortie-eglise.jpg"
+          alt="Sortie d'église des mariés sous les confettis"
           fill
           priority
           className="object-cover"
