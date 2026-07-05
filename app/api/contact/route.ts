@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    await resend.emails.send({
+    const notifyResult = await resend.emails.send({
       from: `Mélanie Photography <no-reply@melanie-photo.fr>`,
       to: process.env.CONTACT_EMAIL!,
       replyTo: data.email,
@@ -92,8 +92,14 @@ export async function POST(req: NextRequest) {
       `,
     });
 
+    if (notifyResult.error) {
+      throw new Error(
+        `Resend (notification): ${notifyResult.error.message}`
+      );
+    }
+
     // Email de confirmation au prospect
-    await resend.emails.send({
+    const confirmResult = await resend.emails.send({
       from: `Mélanie Photography <no-reply@melanie-photo.fr>`,
       to: data.email,
       subject: "Votre demande a bien été reçue",
@@ -122,6 +128,12 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+
+    if (confirmResult.error) {
+      throw new Error(
+        `Resend (confirmation): ${confirmResult.error.message}`
+      );
+    }
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
