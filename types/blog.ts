@@ -19,6 +19,7 @@ export interface BlogPostWithContent extends BlogPost {
 export const blogCategories = [
   "Mariage",
   "Grossesse",
+  "Naissance",
   "Famille",
   "Conseils séance",
   "Coulisses",
