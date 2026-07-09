@@ -25,14 +25,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
+  const title = post.seoTitle ?? post.title;
+  const description = post.seoDescription ?? post.description;
   return {
-    title: post.title,
-    description: post.description,
+    title,
+    description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
-      title: post.title,
-      description: post.description,
+      title,
+      description,
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
@@ -52,11 +54,25 @@ export default function BlogPostPage({ params }: Props) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    image: post.image ? `${siteConfig.url}${post.image}` : undefined,
     author: {
       "@type": "Person",
       name: post.author,
     },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/apple-icon.png`,
+      },
+    },
     datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}/blog/${post.slug}`,
+    },
     url: `${siteConfig.url}/blog/${post.slug}`,
     keywords: post.tags.join(", "),
   };

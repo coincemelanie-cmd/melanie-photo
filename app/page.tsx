@@ -6,7 +6,7 @@ import { CTA } from "@/components/sections/CTA";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — ${siteConfig.tagline}`,
+  title: `${siteConfig.name} — ${siteConfig.seoTitle}`,
   description: siteConfig.description,
   alternates: { canonical: "/" },
 };
@@ -21,7 +21,10 @@ const jsonLd = {
   email: siteConfig.author.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: siteConfig.author.address,
+    streetAddress: siteConfig.author.addressParts.streetAddress,
+    addressLocality: siteConfig.author.addressParts.addressLocality,
+    postalCode: siteConfig.author.addressParts.postalCode,
+    addressRegion: siteConfig.author.addressParts.addressRegion,
     addressCountry: "FR",
   },
   areaServed: ["Perpignan", "Narbonne", "Aude", "Pyrénées-Orientales"],
