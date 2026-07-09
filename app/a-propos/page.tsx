@@ -22,7 +22,7 @@ export default function AProposPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl lg:sticky lg:top-28">
               <Image
                 src="/images/melanie-photographe-portrait.jpg"
-                alt="Mélanie, photographe, appareil photo à l'épaule"
+                alt="Mélanie, photographe, portrait en noir et blanc derrière son appareil photo"
                 fill
                 priority
                 className="object-cover"
