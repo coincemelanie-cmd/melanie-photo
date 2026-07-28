@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
+import { isRateLimited } from "@/lib/rate-limit";
+import { escapeHtml } from "@/lib/utils";
 
 const schema = z.object({
   nom: z.string().min(2).max(100),
@@ -24,18 +26,49 @@ const prestationLabel: Record<string, string> = {
   autre: "Autre",
 };
 
+function isAllowedOrigin(req: NextRequest): boolean {
+  const origin = req.headers.get("origin") ?? req.headers.get("referer");
+  if (!origin) return false;
+  try {
+    return new URL(origin).origin === req.nextUrl.origin;
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req: NextRequest) {
+  if (!isAllowedOrigin(req)) {
+    return NextResponse.json({ error: "Requête refusée" }, { status: 403 });
+  }
+
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Trop de tentatives, réessayez plus tard" },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await req.json();
     const data = schema.parse(body);
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
+    const safeNom = escapeHtml(data.nom);
+    const safeEmail = escapeHtml(data.email);
+    const safeTelephone = escapeHtml(data.telephone);
+    const safeMessage = escapeHtml(data.message);
+    const safeDateSouhaitee = data.dateSouhaitee
+      ? escapeHtml(data.dateSouhaitee)
+      : undefined;
+
     const notifyResult = await resend.emails.send({
       from: `Mélanie Photography <no-reply@melanie-photo.fr>`,
       to: process.env.CONTACT_EMAIL!,
       replyTo: data.email,
-      subject: `Nouvelle demande — ${prestationLabel[data.prestation]} (${data.nom})`,
+      subject: `Nouvelle demande — ${prestationLabel[data.prestation]} (${safeNom})`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #b8432a; border-bottom: 2px solid #e5e7eb; padding-bottom: 12px;">
@@ -45,18 +78,18 @@ export async function POST(req: NextRequest) {
           <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
             <tr style="background: #f9fafb;">
               <td style="padding: 10px 14px; font-weight: bold; width: 40%; color: #374151;">Nom</td>
-              <td style="padding: 10px 14px; color: #111827;">${data.nom}</td>
+              <td style="padding: 10px 14px; color: #111827;">${safeNom}</td>
             </tr>
             <tr>
               <td style="padding: 10px 14px; font-weight: bold; color: #374151;">Email</td>
               <td style="padding: 10px 14px; color: #111827;">
-                <a href="mailto:${data.email}" style="color: #b8432a;">${data.email}</a>
+                <a href="mailto:${safeEmail}" style="color: #b8432a;">${safeEmail}</a>
               </td>
             </tr>
             <tr style="background: #f9fafb;">
               <td style="padding: 10px 14px; font-weight: bold; color: #374151;">Téléphone</td>
               <td style="padding: 10px 14px; color: #111827;">
-                <a href="tel:${data.telephone}" style="color: #b8432a;">${data.telephone}</a>
+                <a href="tel:${safeTelephone}" style="color: #b8432a;">${safeTelephone}</a>
               </td>
             </tr>
             <tr>
@@ -64,10 +97,10 @@ export async function POST(req: NextRequest) {
               <td style="padding: 10px 14px; color: #111827;">${prestationLabel[data.prestation]}</td>
             </tr>
             ${
-              data.dateSouhaitee
+              safeDateSouhaitee
                 ? `<tr style="background: #f9fafb;">
               <td style="padding: 10px 14px; font-weight: bold; color: #374151;">Date souhaitée</td>
-              <td style="padding: 10px 14px; color: #111827;">${data.dateSouhaitee}</td>
+              <td style="padding: 10px 14px; color: #111827;">${safeDateSouhaitee}</td>
             </tr>`
                 : ""
             }
@@ -75,13 +108,13 @@ export async function POST(req: NextRequest) {
 
           <div style="margin-top: 20px; padding: 16px; background: #fdf4f1; border-left: 4px solid #b8432a; border-radius: 4px;">
             <p style="font-weight: bold; color: #7a2f20; margin: 0 0 8px;">Message</p>
-            <p style="color: #652a1e; margin: 0; white-space: pre-line;">${data.message}</p>
+            <p style="color: #652a1e; margin: 0; white-space: pre-line;">${safeMessage}</p>
           </div>
 
           <div style="margin-top: 24px; text-align: center;">
-            <a href="mailto:${data.email}"
+            <a href="mailto:${safeEmail}"
                style="display: inline-block; background: #b8432a; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
-              Répondre à ${data.nom}
+              Répondre à ${safeNom}
             </a>
           </div>
 
@@ -105,7 +138,7 @@ export async function POST(req: NextRequest) {
       subject: "Votre demande a bien été reçue",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #111827;">Bonjour ${data.nom},</h2>
+          <h2 style="color: #111827;">Bonjour ${safeNom},</h2>
 
           <p style="color: #374151; line-height: 1.6;">
             Votre demande concernant une séance "${prestationLabel[data.prestation]}" a bien été reçue.
