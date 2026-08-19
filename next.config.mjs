@@ -7,6 +7,23 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "inline",
   },
+  redirects: async () => [
+    {
+      source: "/portfolio-mariage",
+      destination: "/portfolio",
+      permanent: true,
+    },
+    {
+      source: "/nos-partenaires",
+      destination: "/",
+      permanent: true,
+    },
+    {
+      source: "/protection-des-donnees-personnelles",
+      destination: "/politique-confidentialite",
+      permanent: true,
+    },
+  ],
   headers: async () => [
     {
       source: "/(.*)",
