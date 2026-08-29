@@ -9,6 +9,31 @@ const nextConfig = {
   },
   redirects: async () => [
     {
+      source: "/contact-photographe-perpignan-narbonne",
+      destination: "/contact",
+      permanent: true,
+    },
+    {
+      source: "/photo-reportage-de-mariage-a-perpignan",
+      destination: "/prestations/mariage",
+      permanent: true,
+    },
+    {
+      source: "/galerie",
+      destination: "/acces-galeries",
+      permanent: true,
+    },
+    {
+      source: "/accueil/contact",
+      destination: "/contact",
+      permanent: true,
+    },
+    {
+      source: "/acces-galerie-melanie-photography",
+      destination: "/acces-galeries",
+      permanent: true,
+    },
+    {
       source: "/portfolio-mariage",
       destination: "/portfolio",
       permanent: true,
