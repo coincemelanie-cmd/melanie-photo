@@ -46,7 +46,7 @@ export function ServicesOverview() {
                     {service.hero}
                   </p>
                   <div className="mt-4 flex items-center gap-1 text-xs font-medium text-brand-600">
-                    Découvrir
+                    Découvrir {service.shortTitle}
                     <ArrowRight
                       className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
                       aria-hidden="true"
