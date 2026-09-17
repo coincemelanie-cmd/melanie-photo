@@ -8,7 +8,7 @@ export const siteConfig = {
   author: {
     name: "Mélanie Photography",
     title: "Photographe — conteuse visuelle",
-    email: process.env.CONTACT_EMAIL ?? "contact@melanie-photo.fr",
+    email: "contact@melanie-photo.fr",
     phone: "06 13 57 67 08",
     address: "30 rue des Tamarins, 11480 La Palme",
     addressParts: {
