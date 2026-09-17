@@ -1,5 +1,5 @@
 import { testimonials } from "@/config/testimonials";
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 
 export function Testimonials() {
   if (testimonials.length === 0) return null;
@@ -16,6 +16,23 @@ export function Testimonials() {
         >
           Ce qu'ils en disent
         </h2>
+
+        <a
+          href="https://www.google.com/search?q=Melanie+Photography+La+Palme+avis"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-neutral-600 hover:text-brand-600 transition-colors"
+        >
+          <span className="flex items-center gap-0.5" aria-hidden="true">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star
+                key={i}
+                className="h-4 w-4 fill-brand-500 text-brand-500"
+              />
+            ))}
+          </span>
+          4,7/5 sur Google — voir les avis
+        </a>
 
         <ul className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2" role="list">
           {testimonials.map((t, i) => (
